@@ -33,13 +33,15 @@
 					
 						<classifier>mule-application</classifier>
 						<cloudHubDeployment>
+						
             			<username>${cloudhub.username}</username>
             			<password>${cloudhub.password}</password>
             			<region>us-east-1</region> <!-- Adjust the region as needed -->
-            			<workers>
-                			<amount>1</amount>
-                			<type>Micro</type> <!-- Worker type, adjust based on your needs -->
-            			</workers>
+            			<environment>${cloudhub.environment}</environment>
+						<!--<applicationName>${cloudhub.app}</applicationName> -->
+						<businessGroup>${cloudhub.bg}</businessGroup>
+						<workerType>${cloudhub.worker}</workerType>
+						<objectStoreV2>true</objectStoreV2>
             			<applicationName>test_application</applicationName>
         				</cloudHubDeployment>
     
