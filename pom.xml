@@ -30,7 +30,19 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-					<classifier>---- select project type ----</classifier>
+					
+						<classifier>mule-application</classifier>
+						<cloudHubDeployment>
+            			<username>${cloudhub.username}</username>
+            			<password>${cloudhub.password}</password>
+            			<region>us-east-1</region> <!-- Adjust the region as needed -->
+            			<workers>
+                			<amount>1</amount>
+                			<type>Micro</type> <!-- Worker type, adjust based on your needs -->
+            			</workers>
+            			<applicationName>test_application</applicationName>
+        				</cloudHubDeployment>
+    
 				</configuration>
 			</plugin>
 		</plugins>
