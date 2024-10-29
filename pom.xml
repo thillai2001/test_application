@@ -30,21 +30,19 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-					
-						<classifier>mule-application</classifier>
-						<cloudHubDeployment>
-						
-            			<username>${cloudhub.username}</username>
-            			<password>${cloudhub.password}</password>
-            			<region>us-east-1</region> <!-- Adjust the region as needed -->
-            			<environment>${cloudhub.environment}</environment>
-						<!--<applicationName>${cloudhub.app}</applicationName> -->
-						<businessGroup>${cloudhub.bg}</businessGroup>
-						<workerType>${cloudhub.worker}</workerType>
-						<objectStoreV2>true</objectStoreV2>
-            			<applicationName>test_application</applicationName>
-        				</cloudHubDeployment>
-    
+					<classifier>---- select project type ----</classifier>
+					<cloudHubDeployment>
+						<uri>https://anypoint.mulesoft.com</uri>
+						<muleVersion>${app.runtime}</muleVersion>
+						<applicationName>${cloudhub.application.name}</applicationName>
+						<environment>${environment}</environment>
+						<region>${region}</region>
+						<workers>${workers}</workers>
+						<workerType>${workerType}</workerType>
+						<connectedAppClientId>cloudhub.username</connectedAppClientId>
+						<connectedAppClientSecret>cloudhub.password</connectedAppClientSecret>
+						<connectedAppGrantType>client_credentials</connectedAppGrantType>
+					</cloudHubDeployment>
 				</configuration>
 			</plugin>
 		</plugins>

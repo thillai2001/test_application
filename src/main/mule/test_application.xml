@@ -5,11 +5,17 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
 	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="df33c9d4-8c1b-42d5-871d-430955f97870" >
-		<http:listener-connection host="0.0.0.0" port="8081" />
+		<http:listener-connection host="0.0.0.0" port="8085" />
 	</http:listener-config>
 	<flow name="test_applicationFlow" doc:id="5272003b-a365-4f31-96db-fdbdce4be842" >
 		<http:listener doc:name="Listener" doc:id="fc9c7d35-df12-4735-b32e-532b6657b8a2" config-ref="HTTP_Listener_config" path="/test"/>
 		<logger level="INFO" doc:name="First_Logger" doc:id="352c7d06-8ac5-479d-817e-6bfb2a7fab15" message='"Application Started"'/>
+		<set-variable value='#["hello"]' doc:name="Set Variable" doc:id="52ee416f-ad4b-422b-89f7-8b843dbc2757" variableName="name"/>
+		<logger level="INFO" doc:name="Logger" doc:id="0adcf5f2-5d73-45aa-9ac1-af07aab33edc" message="Successfully depoyed"/>
+		<flow-ref doc:name="Flow Reference" doc:id="d6550fc0-17af-4544-bd9d-f142c5af155c" name="test_applicationSub_Flow"/>
 		<set-payload value='#["Hello world"]' doc:name="Set Payload" doc:id="20e6cdf4-de4a-48c0-a88e-f8469fec321a" />
 	</flow>
+	<sub-flow name="test_applicationSub_Flow" doc:id="241745cf-f16b-4e06-ac02-345a08934c5f" >
+		<set-variable value='#["helloo2"]' doc:name="Set Variable" doc:id="790abe73-c752-4848-bbe6-c6a66f832682" variableName="name1"/>
+	</sub-flow>
 </mule>
