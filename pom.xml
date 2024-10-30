@@ -38,7 +38,8 @@
 						<environment>${environment}</environment>
 						<region>${region}</region>
 						<workers>${workers}</workers>
-						<workerType>${workerType}</workerType>
+						<vCores>cloudhub.vCores</vCores>
+						<!--<workerType>${workerType}</workerType> -->
 						<connectedAppClientId>cloudhub.username</connectedAppClientId>
 						<connectedAppClientSecret>cloudhub.password</connectedAppClientSecret>
 						<connectedAppGrantType>client_credentials</connectedAppGrantType>
