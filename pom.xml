@@ -37,14 +37,14 @@
                     <classifier>mule-application</classifier>
                     <cloudHubDeployment>
                         <uri>${cloudhub.uri}</uri>
-                        <muleVersion>${app.runtime}</muleVersion>
-                        <applicationName>test-application</applicationName>
-                        <environment>${cloudhub.env}</environment>
+                        <muleVersion>4.4.0</muleVersion>
+                        <applicationName>${App_Name}</applicationName>
+                        <environment>${Environment}</environment>
                         <region>${cloudhub.region}</region>
-                        <workers>${cloudhub.workers}</workers>
+                        <workers>${worker}</workers>
                         <workerType>${cloudhub.workerType}</workerType>
-                        <connectedAppClientId>${env.CLIENT_ID}</connectedAppClientId> <!-- Recommended to fetch from env or settings.xml -->
-                        <connectedAppClientSecret>${env.CLIENT_SECRET}</connectedAppClientSecret>
+                        <connectedAppClientId>${cloudhub_username}</connectedAppClientId> <!-- Recommended to fetch from env or settings.xml -->
+                        <connectedAppClientSecret>${cloudhub_password}</connectedAppClientSecret>
                         <connectedAppGrantType>client_credentials</connectedAppGrantType>
                     </cloudHubDeployment>
                 </configuration>
