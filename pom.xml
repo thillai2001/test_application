@@ -33,15 +33,15 @@
 					<classifier>mule-application</classifier>
 					<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
-						<muleVersion>4.8.0</muleVersion>
-						<applicationName>test-application</applicationName>
-						<environment>Sandbox</environment>
-						<region>US-East-2</region>
-						<workers>1</workers>
+						<muleVersion>${app.runtime}</muleVersion>
+						<applicationName>${cloudhub.application.name}</applicationName>
+						<environment>${environment}</environment>
+						<region>${region}</region>
+						<workers>${workers}</workers>
 						<!--<vCores>${cloudhub.vCores}</vCores> -->
-						<workerType>Micro</workerType>
-						<connectedAppClientId>b52562965a484f22a29d04412eb840d4</connectedAppClientId>
-						<connectedAppClientSecret>A791d8A573FC4e4d980Fb3Fe9A12F966</connectedAppClientSecret>
+						<workerType>${workerType}</workerType>
+						<connectedAppClientId>cloudhub.username</connectedAppClientId>
+						<connectedAppClientSecret>cloudhub.password</connectedAppClientSecret>
 						<connectedAppGrantType>client_credentials</connectedAppGrantType>
 					</cloudHubDeployment>
 				</configuration>
